@@ -1,0 +1,23 @@
+{% extends 'New/base.html' %} {% load crispy_forms_tags %} {% block content %}
+<h1>
+    Enter your duty
+</h1>
+
+<form style="color:orangered" method="POST">
+    {% csrf_token %}
+    <div class="main ">
+        <form method="POST ">
+            {% csrf_token %}
+            <div class="form-group ">
+                <div class="container-fluid ">
+                    <div class="row-fluid ">
+                        <div class="form-group col-md-4 ">
+                            <fieldset class="form-group ">
+                                <legend class="border-bottom mb-4 ">Duty's</legend>
+                                {{form|crispy}}
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit " class="btn btn-primary btn-lg ">Submit</button> {% endblock content %}

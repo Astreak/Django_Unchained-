@@ -1,0 +1,21 @@
+ {% extends 'New/base.html' %}{% block content %} {% if user.is_authenticated %}
+<h1 style="color:crimson;font: width 2;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> To Do App</h1>
+<h2><span style="color:green"> User:-</span><u>{{user.username}}</u>
+    <hr>
+    <hr>
+</h2>
+<hr>
+<ul> {% for i in T %} {% ifequal i.date K %}
+    <li style="color:aqua;font-size:large;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:34px">
+        {{i.text}} <span style="color:green"> {{"Date:->"}} {{i.date}}</span></li>
+
+    {% else %}
+    <li style=" color:aqua;font-size:large;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:34px ">
+        {{i.text}} <span style="color:red "> {{"Date:->"}} {{i.date}}</span></li>
+    {% endifequal %}
+    <a href="{% url 'update_task' i.id %}">Update</a>
+    <a href="{% url 'delete_task' i.id %}" style="color:darkred">Delete</a>{% endfor %}{% else %} </ul>
+
+<h1>
+    <center> You need to login first</center>
+</h1>{%endif%}{% endblock content %}
