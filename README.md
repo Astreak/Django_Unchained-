@@ -4,4 +4,4 @@ Another Django Application -- (To do App)
 # Technology and frameworks
 - Django(python backend framework)
 - sqlite database
-- Jinja2
+- Jinja2 templating engine
